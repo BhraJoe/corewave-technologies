@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './ServiceCard.css';
 
-const ServiceCard = ({ icon: Icon, title, description, delay = 0 }) => {
+const ServiceCard = ({ icon: Icon, title, description, delay = 0 }) => { // eslint-disable-line no-unused-vars
     return (
-        <motion.div
+        <Motion.div
             className="service-card"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ const ServiceCard = ({ icon: Icon, title, description, delay = 0 }) => {
             <Link to="/services" className="card-link">
                 Learn more <ArrowRight size={16} />
             </Link>
-        </motion.div>
+        </Motion.div>
     );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Folder, Filter } from 'lucide-react';
 import './Portfolio.css';
 
@@ -64,7 +64,7 @@ const Portfolio = () => {
     const featuredProject = projects.find(p => p.featured);
 
     return (
-        <motion.div
+        <Motion.div
             className="portfolio-page"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -73,7 +73,7 @@ const Portfolio = () => {
         >
             <section className="portfolio-hero-section">
                 <div className="container">
-                    <motion.div
+                    <Motion.div
                         className="hero-content-centered"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -84,7 +84,7 @@ const Portfolio = () => {
                         <p className="hero-description">
                             A curated selection of projects that demonstrate our ability to solve complex problems with elegant code.
                         </p>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
 
@@ -93,7 +93,7 @@ const Portfolio = () => {
                 <section className="section featured-section">
                     <div className="container">
                         <div className="section-label">Featured Project</div>
-                        <motion.div
+                        <Motion.div
                             className="featured-card"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ const Portfolio = () => {
                                     <a href={featuredProject.link} className="btn-outline">Live Demo</a>
                                 </div>
                             </div>
-                        </motion.div>
+                        </Motion.div>
                     </div>
                 </section>
             )}
@@ -136,10 +136,10 @@ const Portfolio = () => {
                         ))}
                     </div>
 
-                    <motion.div layout className="portfolio-grid">
+                    <Motion.div layout className="portfolio-grid">
                         <AnimatePresence>
                             {filteredProjects.map((project) => (
-                                <motion.div
+                                <Motion.div
                                     layout
                                     key={project.id}
                                     className="project-card"
@@ -169,13 +169,13 @@ const Portfolio = () => {
                                             ))}
                                         </div>
                                     </div>
-                                </motion.div>
+                                </Motion.div>
                             ))}
                         </AnimatePresence>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
-        </motion.div>
+        </Motion.div>
     );
 };
 

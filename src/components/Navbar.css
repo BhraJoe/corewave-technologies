@@ -33,14 +33,6 @@
     color: var(--text-primary);
 }
 
-.logo-icon {
-    color: var(--accent-primary);
-}
-
-.highlight {
-    color: var(--accent-primary);
-}
-
 /* Desktop Styles */
 .navbar-desktop {
     display: flex;

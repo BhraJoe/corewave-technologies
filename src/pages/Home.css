@@ -353,6 +353,113 @@
     color: var(--text-secondary);
 }
 
+/* Process Section */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.process-step {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.15);
+}
+
+.process-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+    color: var(--accent-primary);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.08);
+}
+
+.process-step h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.process-step p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.15);
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 0.25rem;
+    color: #facc15;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.testimonial-author strong {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.testimonial-author span {
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+}
+
 /* CTA Section */
 .cta-box {
     background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.9)), url('../assets/hero-bg.png');

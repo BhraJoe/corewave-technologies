@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
 
     // Close mobile menu on route change
     useEffect(() => {
-        setIsOpen(false);
+        setIsOpen(false); // eslint-disable-line react-hooks/set-state-in-effect
     }, [location]);
 
     const navLinks = [
@@ -34,8 +35,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-container">
                 <Link to="/" className="navbar-logo">
-                    <Code2 className="logo-icon" size={28} />
-                    <span className="logo-text">JoeTech<span className="highlight">Solutions</span></span>
+                    <Logo size={28} />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -69,7 +69,7 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <AnimatePresence>
                     {isOpen && (
-                        <motion.div
+                        <Motion.div
                             className="navbar-mobile"
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                             </ul>
-                        </motion.div>
+                        </Motion.div>
                     )}
                 </AnimatePresence>
             </div>

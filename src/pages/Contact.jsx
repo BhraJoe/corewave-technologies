@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { motion as Motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, Bubbles } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -13,7 +13,6 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Placeholder for form submission logic
         alert('Thank you! This is a demo form. In a real app, this would send an email.');
     };
 
@@ -25,7 +24,7 @@ const Contact = () => {
     };
 
     return (
-        <motion.div
+        <Motion.div
             className="contact-page"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -34,7 +33,7 @@ const Contact = () => {
         >
             <section className="contact-hero-section">
                 <div className="container">
-                    <motion.div
+                    <Motion.div
                         className="hero-content-centered"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -45,13 +44,13 @@ const Contact = () => {
                         <p className="hero-description">
                             Ready to build something extraordinary? We're currently accepting new projects.
                         </p>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
 
             <section className="section contact-section">
                 <div className="container contact-container">
-                    <motion.div
+                    <Motion.div
                         className="contact-info"
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -80,20 +79,25 @@ const Contact = () => {
                                 <div className="icon-box"><Phone size={20} /></div>
                                 <div>
                                     <h3>Phone</h3>
-                                    <p>+233 XX XXX XXXX</p>
+                                    <p>+233 59 705 9188</p>
                                 </div>
                             </div>
                             <div className="contact-item">
                                 <div className="icon-box"><MapPin size={20} /></div>
                                 <div>
                                     <h3>Location</h3>
-                                    <p>Accra, Ghana</p>
+                                    <p>Kumasi, Ghana</p>
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
 
-                    <motion.div
+                        <a href="https://wa.me/233597059188" target="_blank" rel="noopener noreferrer" className="whatsapp-btn">
+                            <Bubbles size={22} />
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                    </Motion.div>
+
+                    <Motion.div
                         className="contact-form-wrapper"
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -152,10 +156,10 @@ const Contact = () => {
                                 Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
                             </button>
                         </form>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
-        </motion.div>
+        </Motion.div>
     );
 };
 

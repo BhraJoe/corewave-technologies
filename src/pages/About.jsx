@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Code, Server, Database, Layout, Terminal, Cpu } from 'lucide-react';
+import { motion as Motion } from 'framer-motion';
+import { Code, Server, Database, Layout, Terminal, Cpu, CheckCircle, Settings, Lightbulb, Shield, Users, RefreshCw, Award, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
@@ -11,8 +11,23 @@ const About = () => {
         { category: "Tools & DevOps", items: ["Git", "Docker", "AWS", "Vercel", "CI/CD"] }
     ];
 
+    const values = [
+        { title: "Simplicity", description: "Clean, uncomplicated solutions that work.", icon: CheckCircle },
+        { title: "Quality", description: "Attention to detail in every project.", icon: Settings },
+        { title: "Innovation", description: "Modern technologies and forward-thinking approaches.", icon: Lightbulb },
+        { title: "Reliability", description: "Solutions you can depend on.", icon: Shield },
+        { title: "Partnership", description: "Working closely with your team.", icon: Users },
+        { title: "Continuous Improvement", description: "Always learning and evolving.", icon: RefreshCw }
+    ];
+
+    const team = [
+        { name: "Joe Mensah", role: "Lead Engineer & Founder", bio: "10+ years in full-stack development.", icon: Award },
+        { name: "Akua Asante", role: "Creative Director", bio: "Award-winning UI/UX designer.", icon: Layout },
+        { name: "Kwame Osei", role: "DevOps Lead", bio: "Cloud infrastructure expert.", icon: Briefcase }
+    ];
+
     return (
-        <motion.div
+        <Motion.div
             className="about-page"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -22,7 +37,7 @@ const About = () => {
             {/* UNIFIED HERO SECTION (Background Image Mode) */}
             <section className="about-hero-section">
                 <div className="container about-container">
-                    <motion.div
+                    <Motion.div
                         className="about-content-centered"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +74,7 @@ const About = () => {
                         <div className="signature">
                             <p>- The JoeTech Team</p>
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
 
@@ -71,7 +86,7 @@ const About = () => {
                     </div>
                     <div className="skills-grid">
                         {skills.map((skillGroup, index) => (
-                            <motion.div
+                            <Motion.div
                                 key={index}
                                 className="skill-card"
                                 initial={{ opacity: 0, y: 20 }}
@@ -85,7 +100,65 @@ const About = () => {
                                         <span key={item} className="skill-tag">{item}</span>
                                     ))}
                                 </div>
-                            </motion.div>
+                            </Motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section values-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Built on Good Technology and Good Principles</h2>
+                        <p>The values that guide our work</p>
+                    </div>
+                    <div className="values-grid">
+                        {values.map((value, index) => {
+                            const Icon = value.icon;
+                            return (
+                                <Motion.div
+                                    key={index}
+                                    className="value-card"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    <div className="value-icon">
+                                        <Icon size={28} />
+                                    </div>
+                                    <h3>{value.title}</h3>
+                                    <p>{value.description}</p>
+                                </Motion.div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section team-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Meet Our Team</h2>
+                        <p>The minds behind JoeTech Solutions.</p>
+                    </div>
+                    <div className="team-grid">
+                        {team.map((member, index) => (
+                            <Motion.div
+                                key={index}
+                                className="team-card"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <div className="team-avatar">
+                                    <member.icon size={36} />
+                                </div>
+                                <h3>{member.name}</h3>
+                                <div className="team-role">{member.role}</div>
+                                <p className="team-bio">{member.bio}</p>
+                            </Motion.div>
                         ))}
                     </div>
                 </div>
@@ -102,7 +175,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
-        </motion.div>
+        </Motion.div>
     );
 };
 
