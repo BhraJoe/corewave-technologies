@@ -48,7 +48,7 @@ const About = () => {
 
                         <div className="about-bio-text">
                             <p>
-                                We are JoeTech Solutions, a passionate team of Software Engineers based in Ghana with a global mindset.
+                                We are CoreWare Technologies, a passionate team of Software Engineers based in Ghana with a global mindset.
                                 We founded this company with a singular mission: to bridge the gap between complex technology
                                 and real-world business outcomes, creating digital products that are not only functional but exceptional.
                             </p>
@@ -72,7 +72,7 @@ const About = () => {
                         </div>
 
                         <div className="signature">
-                            <p>- The JoeTech Team</p>
+                            <p>- The CoreWare Team</p>
                         </div>
                     </Motion.div>
                 </div>
@@ -140,7 +140,7 @@ const About = () => {
                 <div className="container">
                     <div className="section-header">
                         <h2>Meet Our Team</h2>
-                        <p>The minds behind JoeTech Solutions.</p>
+                        <p>The minds behind CoreWare Technologies.</p>
                     </div>
                     <div className="team-grid">
                         {team.map((member, index) => (

@@ -41,7 +41,7 @@ const Footer = () => {
                     <ul>
                         <li>
                             <Mail size={16} />
-                            <span>hello@joetechsolutions.com</span>
+                            <span>hello@corewaretechnologies.com</span>
                         </li>
                         <li>
                             <Phone size={16} />
@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <div className="container">
-                    <p>&copy; {currentYear} JoeTech Solutions. All rights reserved.</p>
+                    <p>&copy; {currentYear} CoreWare Technologies. All rights reserved.</p>
                 </div>
             </div>
         </footer>

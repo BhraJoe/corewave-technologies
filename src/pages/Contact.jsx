@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion as Motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Bubbles } from 'lucide-react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import './Contact.css';
 
 const Contact = () => {
@@ -67,12 +69,12 @@ const Contact = () => {
                             We're open for freelance projects and consulting.
                         </p>
 
-                        <div className="contact-details">
+<div className="contact-details">
                             <div className="contact-item">
                                 <div className="icon-box"><Mail size={20} /></div>
                                 <div>
                                     <h3>Email</h3>
-                                    <p>hello@joetechsolutions.com</p>
+                                    <p>hello@corewaretechnologies.com</p>
                                 </div>
                             </div>
                             <div className="contact-item">
@@ -80,13 +82,6 @@ const Contact = () => {
                                 <div>
                                     <h3>Phone</h3>
                                     <p>+233 59 705 9188</p>
-                                </div>
-                            </div>
-                            <div className="contact-item">
-                                <div className="icon-box"><MapPin size={20} /></div>
-                                <div>
-                                    <h3>Location</h3>
-                                    <p>Kumasi, Ghana</p>
                                 </div>
                             </div>
                         </div>
@@ -156,6 +151,33 @@ const Contact = () => {
                                 Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
                             </button>
                         </form>
+                    </Motion.div>
+                </div>
+            </section>
+
+            <section className="section map-section">
+                <div className="container">
+                    <Motion.div
+                        className="map-wrapper"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                    >
+                        <h3>Our Location</h3>
+                        <MapContainer
+                            center={[6.6885, -1.6244]}
+                            zoom={13}
+                            scrollWheelZoom={false}
+                            className="contact-map"
+                        >
+                            <TileLayer
+                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            <Marker position={[6.6885, -1.6244]}>
+                                <Popup>CoreWare Technologies, Kumasi, Ghana</Popup>
+                            </Marker>
+                        </MapContainer>
                     </Motion.div>
                 </div>
             </section>
